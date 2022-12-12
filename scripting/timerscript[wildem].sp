@@ -27,24 +27,24 @@
 		CreateTimer(waitingtime5, Discord, _, TIMER_REPEAT);
 	}
 	public Action Webpage(Handle timer){
-	    PrintToChatAll(" \x07[Wildem] \x01>>Látogasd meg weboldalunkat is: https://www.wildem.hu/");
+	    PrintToChatAll(" \x07[Wildem] \x01 >> Látogasd meg weboldalunkat is: https://www.wildem.hu/");
 	    return Plugin_Continue;
 	}
 	public Action FriendIp(Handle timer){
-	    PrintToChatAll(" \x07[Wildem] \x01>>Ha tetszik a szerver szólj a barátaidnak is.");
-	    PrintToChatAll(" \x07[Wildem] \x01>>95.138.193.251:34028");
+	    PrintToChatAll(" \x07[Wildem] \x01 >> Ha tetszik a szerver szólj a barátaidnak is.");
+	    PrintToChatAll(" \x07[Wildem] \x01 >> 95.138.193.251:34028");
 	    return Plugin_Continue;
 	}
 	public Action Stat(Handle timer){
-	    PrintToChatAll(" \x07[Wildem] \x01>>!stat A statisztikáid megtekintéséhez.");
+	    PrintToChatAll(" \x07[Wildem] \x01 >> !stat A statisztikáid megtekintéséhez.");
 	    return Plugin_Continue;
 	}
 	public Action Rules(Handle timer){
-	    PrintToChatAll(" \x07[Wildem] \x01>>!rules A szabályok áttekintéséhez.");
+	    PrintToChatAll(" \x07[Wildem] \x01 >> !rules A szabályok áttekintéséhez.");
 	    return Plugin_Continue;
 	}
 	public Action Discord(Handle timer){
-	    PrintToChatAll(" \x07[Wildem] \x01>>!dc A discord meghívóhoz.");
+	    PrintToChatAll(" \x07[Wildem] \x01 >> !dc A discord meghívóhoz.");
 	    return Plugin_Continue;
 	}
 	
