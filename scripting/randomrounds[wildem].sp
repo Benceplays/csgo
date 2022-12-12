@@ -17,7 +17,7 @@ public Plugin myinfo =
 public OnPluginStart(){
 	HookEvent("round_end", OnRoundEnd, EventHookMode_PostNoCopy);
 	HookEvent("round_start", OnRoundStart, EventHookMode_PostNoCopy);
-	//CreateTimer(30.0, scout, _, TIMER_REPEAT);
+	CreateTimer(30.0, scout, _, TIMER_REPEAT);
 }
 
 public OnRoundEnd(Handle:event, const String:name[], bool:dontBroadcast){
@@ -38,11 +38,11 @@ public OnRoundEnd(Handle:event, const String:name[], bool:dontBroadcast){
 	} 
 	PrintToChatAll("%d a random szam", random);
 }
-/*
-public Action:scout(client, Args, Handle timer){
-    GivePlayerItem(client, "weapon_scout");
-    return Plugin_Handled;
-} */
+
+public Action scout(Handle timer, int client){
+	GivePlayerItem(client, "weapon_scout");
+	return Plugin_Handled;
+}
 
 public OnRoundStart(Handle:event, const String:name[], bool:dontBroadcast){
 	PrintHintTextToAll("Ez a hint");
