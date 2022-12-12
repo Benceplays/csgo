@@ -1,26 +1,26 @@
 #include <sdkhooks>
 #include <sdktools>
 #include <sourcemod>
-#pragma newdecls required
 #pragma semicolon 1
 
 
 public Plugin myinfo =
 {
 	name = "Randomrounds",
-	author = "",
-	description = "",
+	author = "Booby",
+	description = "This script is needed for the random round.",
 	version = "1.0.0",
-	url = "https://github.com//Randomrounds"
+	url = "https://www.wildem.hu/"
 };
 
 
-	public void OnPluginStart(int client)
-	{
-		Random();
-	}
+public OnPluginStart(){
+	HookEvent("round_end", OnRoundEnd, EventHookMode_PostNoCopy);
+	HookEvent("round_start", OnRoundStart, EventHookMode_PostNoCopy);
+	//CreateTimer(30.0, scout, _, TIMER_REPEAT);
+}
 
-public void Random(){
+public OnRoundEnd(Handle:event, const String:name[], bool:dontBroadcast){
 	int random = GetRandomInt(1, 4);
 	switch(random) {
 		case 1: {
@@ -36,4 +36,15 @@ public void Random(){
 			PrintToChatAll("tttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttnegy");
 		}
 	} 
+	PrintToChatAll("%d a random szam", random);
+}
+/*
+public Action:scout(client, Args, Handle timer){
+    GivePlayerItem(client, "weapon_scout");
+    return Plugin_Handled;
+} */
+
+public OnRoundStart(Handle:event, const String:name[], bool:dontBroadcast){
+	PrintHintTextToAll("Ez a hint");
+	PrintToChatAll("A kör elkezdődött.");
 }

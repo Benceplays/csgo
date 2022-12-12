@@ -8,6 +8,8 @@
 	float waitingtime3 = 145.0;
 	float waitingtime4 = 204.0;
 	float waitingtime5 = 237.0;
+	float waitingtime6 = 266.0;
+
 	
 	 public Plugin myinfo =
 	{
@@ -25,6 +27,7 @@
 		CreateTimer(waitingtime3, Stat, _, TIMER_REPEAT);
 		CreateTimer(waitingtime4, Rules, _, TIMER_REPEAT);
 		CreateTimer(waitingtime5, Discord, _, TIMER_REPEAT);
+		CreateTimer(waitingtime6, Minigames, _, TIMER_REPEAT);
 	}
 	public Action Webpage(Handle timer){
 	    PrintToChatAll(" \x07[Wildem] \x01 >> Látogasd meg weboldalunkat is: https://www.wildem.hu/");
@@ -47,5 +50,8 @@
 	    PrintToChatAll(" \x07[Wildem] \x01 >> !dc A discord meghívóhoz.");
 	    return Plugin_Continue;
 	}
-	
+	public Action Minigames(Handle timer){
+	    PrintToChatAll(" \x07[Wildem] \x01 >> !mg A minigamek megtekintéséhez.");
+	    return Plugin_Continue;
+	}
 	
