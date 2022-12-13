@@ -15,11 +15,18 @@ public Plugin myinfo =
 };
 
 public int random;
+public bool first = true;
 
 public OnPluginStart(){
 	HookEvent("round_end", OnRoundEnd, EventHookMode_PostNoCopy);
+	if (first == false) {
 	HookEvent("round_start", OnRoundStart, EventHookMode_PostNoCopy);
 	HookEvent("round_start", TheMethod, EventHookMode_PostNoCopy);
+	} 
+	else{
+	first = false;
+	//round ugras jon majd ide
+	} 
 }
 
 public OnRoundEnd(Handle:event, const String:name[], bool:dontBroadcast){
