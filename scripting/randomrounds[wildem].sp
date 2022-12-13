@@ -4,6 +4,7 @@
 #pragma semicolon 1
 
 
+
 public Plugin myinfo =
 {
 	name = "Randomrounds",
@@ -13,35 +14,27 @@ public Plugin myinfo =
 	url = "https://www.wildem.hu/"
 };
 
+public int random;
 
 public OnPluginStart(){
 	HookEvent("round_end", OnRoundEnd, EventHookMode_PostNoCopy);
 	HookEvent("round_start", OnRoundStart, EventHookMode_PostNoCopy);
-	CreateTimer(30.0, scout, _, TIMER_REPEAT);
+	HookEvent("round_start", TheMethod, EventHookMode_PostNoCopy);
 }
 
 public OnRoundEnd(Handle:event, const String:name[], bool:dontBroadcast){
-	int random = GetRandomInt(1, 4);
-	switch(random) {
-		case 1: {
-			PrintToChatAll("sssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssegy");
-		}
-		case 2: {
-			PrintToChatAll("wwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwketto");
-		}
-		case 3: {
-			PrintToChatAll("rrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrharom");
-		}
-		case 4: {
-			PrintToChatAll("tttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttnegy");
-		}
-	} 
+	random = GetRandomInt(1, 4);
 	PrintToChatAll("%d a random szam", random);
+	return random;
+}
+public TheMethod(Handle:event, const String:name[], bool:dontBroadcast){
+	if (random == 1){
+		negev(1);
+	}
 }
 
-public Action scout(Handle timer, int client){
-	GivePlayerItem(client, "weapon_scout");
-	return Plugin_Handled;
+public void negev(int client){
+	GivePlayerItem(client, "weapon_negev");
 }
 
 public OnRoundStart(Handle:event, const String:name[], bool:dontBroadcast){
