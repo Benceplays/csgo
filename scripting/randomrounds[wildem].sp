@@ -15,18 +15,18 @@ public Plugin myinfo =
 };
 
 public int random;
-public bool first = true;
+//public bool first = true;
 
-public OnPluginStart(){
+public OnPluginStart(int client){
 	HookEvent("round_end", OnRoundEnd, EventHookMode_PostNoCopy);
-	if (first == false) {
+	//if (first == false) {
 	HookEvent("round_start", OnRoundStart, EventHookMode_PostNoCopy);
 	HookEvent("round_start", TheMethod, EventHookMode_PostNoCopy);
-	} 
+	/*} 
 	else{
 	first = false;
 	//round ugras jon majd ide
-	} 
+	} */
 }
 
 public OnRoundEnd(Handle:event, const String:name[], bool:dontBroadcast){
@@ -35,9 +35,14 @@ public OnRoundEnd(Handle:event, const String:name[], bool:dontBroadcast){
 	return random;
 }
 public TheMethod(Handle:event, const String:name[], bool:dontBroadcast){
-	if (random == 1){
-		negev(1);
-	}
+	//if (random == 1){
+		any data;
+		int client = GetClientOfUserId(data);
+
+		negev(client);
+		PrintToChat(client, "Működik");
+		PrintToChatAll("Mukodikall");
+	//}
 }
 
 public void negev(int client){
@@ -45,6 +50,9 @@ public void negev(int client){
 }
 
 public OnRoundStart(Handle:event, const String:name[], bool:dontBroadcast){
+	any data;
+	int client = GetClientOfUserId(data);
+	PrintToConsoleAll("%s", client);
 	PrintHintTextToAll("Ez a hint");
 	PrintToChatAll("A kör elkezdődött.");
 }

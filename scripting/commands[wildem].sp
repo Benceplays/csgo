@@ -17,6 +17,8 @@
     {
         RegConsoleCmd("sm_dc", Discord);
         RegConsoleCmd("sm_rules", Rules);
+        RegConsoleCmd("sm_stat", Stats);
+        RegConsoleCmd("sm_mg", MiniGames);
     } 
 
     public Action Discord(int client, int args) 
@@ -24,6 +26,24 @@
         if (IsClientInGame(client))
         {
             PrintToChat(client, " \x07[Wildem] \x01 >> Discord: https://discord.gg/Em9DMjhdkG");
+        }
+        return Plugin_Handled; 
+    } 
+
+    public Action MiniGames(int client, int args) 
+    {
+        if (IsClientInGame(client))
+        {
+            PrintToChat(client, " \x07[Wildem] \x01 >> A játékmódok:");
+        }
+        return Plugin_Handled; 
+    } 
+
+    public Action Stats(int client, int args) 
+    {
+        if (IsClientInGame(client))
+        {
+            PrintToChat(client, " \x07[Wildem] \x01 >> Még készül....");
         }
         return Plugin_Handled; 
     } 
