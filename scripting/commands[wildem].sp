@@ -41,13 +41,36 @@
 
     public Action Stats(int client, int args) 
     {
-        if (IsClientInGame(client))
-        {
-            PrintToChat(client, " \x07[Wildem] \x01 >> Még készül....");
-        }
-        return Plugin_Handled; 
+        Menu menu = new Menu(Menu_Callback);
+        menu.SetTitle("Stats");
+        menu.AddItem("rank", "Rank: Legendás Sas");
+        menu.AddItem("options2", "options2");
+        menu.Display(client, 30);
+        return Plugin_Handled;
     } 
     
+    public int Menu_Callback(Menu menu, MenuAction action, int param1, int param2){
+        switch (action){
+            case MenuAction_Select:
+            {
+                char item[32];
+                menu.GetItem(param2, item, sizeof(item));
+
+                if (StrEqual(item, "rank")){
+                    PrintToChatAll("rank");
+                }
+                else if (StrEqual(item, "options2")){
+                    PrintToChatAll("options2 kivalasztva");
+                }
+            }
+            case MenuAction_End:
+            {
+                delete menu;
+            }
+        }
+        return param1;
+    }
+
     public Action Rules(int client, int args) 
     {
         if (IsClientInGame(client))
