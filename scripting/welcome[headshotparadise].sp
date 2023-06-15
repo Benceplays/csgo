@@ -14,7 +14,7 @@ public Plugin myinfo =
 	author = "Booby",
 	description = "A script a játékosok üdvözlésére készült.",
 	version = "1.0",
-	url = "http://www.wildem.hu/"
+	url = "https://headshotparadise.hu/"
 };
 
 public void OnPluginStart()
@@ -54,10 +54,10 @@ public Action Timer_DelaySpawn(Handle timer, any data)
 	char name[64];
 	GetClientName(client, name, sizeof(name));
 	PrintToChat(client, " \x07---------------------------------------------------------------------------");
-	PrintToChat(client, " \x07[Wildem] \x01 >> %s üdvözlünk a Wildemen.", name);
-	PrintToChat(client, " \x07[Wildem] \x01 >> Reméljük örömteli perceket okozhatunk neked.");
-	PrintToChat(client, " \x07[Wildem] \x01 >> Weboldal: https://www.wildem.hu/");
-	PrintToChat(client, " \x07[Wildem] \x01 >> Discord: https://discord.gg/Em9DMjhdkG");
+	PrintToChat(client, " \x07[Headshot Paradise] \x01 >> %s üdvözlünk a Headshot Paradise-on.", name);
+	PrintToChat(client, " \x07[Headshot Paradise] \x01 >> Reméljük örömteli perceket okozhatunk neked.");
+	PrintToChat(client, " \x07[Headshot Paradise] \x01 >> Weboldal: https://headshotparadise.hu/");
+	PrintToChat(client, " \x07[Headshot Paradise] \x01 >> Discord: https://discord.gg/sg6NFnEUAa");
 	PrintToChat(client, " \x07---------------------------------------------------------------------------");
 	g_bMessagesShown[client] = true;
 	

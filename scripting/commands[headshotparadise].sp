@@ -9,7 +9,7 @@
 	    author = "Booby",
 	    description = "Information that can be written with a timer.",
 	    version = "1.0",
-	    url = "https://www.wildem.hu/"
+	    url = "https://headshotparadise.hu/"
 	};
 	
 	
@@ -25,7 +25,7 @@
     {
         if (IsClientInGame(client))
         {
-            PrintToChat(client, " \x07[Wildem] \x01 >> Discord: https://discord.gg/Em9DMjhdkG");
+            PrintToChat(client, " \x07[Headshot Paradise] \x01 >> Discord: https://discord.gg/sg6NFnEUAa");
         }
         return Plugin_Handled; 
     } 
@@ -34,7 +34,7 @@
     {
         if (IsClientInGame(client))
         {
-            PrintToChat(client, " \x07[Wildem] \x01 >> A játékmódok:");
+            PrintToChat(client, " \x07[Headshot Paradise] \x01 >> A játékmódok:");
         }
         return Plugin_Handled; 
     } 
@@ -75,11 +75,11 @@
     {
         if (IsClientInGame(client))
         {
-            PrintToChat(client, " \x07[Wildem] \x01 >> Szabályok: Ne legyél toxic.");
-            PrintToChat(client, " \x07[Wildem] \x01 >> Szabályok: Ne legyél toxic.");
-            PrintToChat(client, " \x07[Wildem] \x01 >> Szabályok: Ne legyél toxic.");
-            PrintToChat(client, " \x07[Wildem] \x01 >> Szabályok: Ne legyél toxic.");
-            PrintToChat(client, " \x07[Wildem] \x01 >> A kevésbé fontos szabályokat a discord szerverünkön találod, !dc.");
+            PrintToChat(client, " \x07[Headshot Paradise] \x01 >> Szabályok: Ne legyél toxic.");
+            PrintToChat(client, " \x07[Headshot Paradise] \x01 >> Szabályok: Ne legyél toxic.");
+            PrintToChat(client, " \x07[Headshot Paradise] \x01 >> Szabályok: Ne legyél toxic.");
+            PrintToChat(client, " \x07[Headshot Paradise] \x01 >> Szabályok: Ne legyél toxic.");
+            PrintToChat(client, " \x07[Headshot Paradise] \x01 >> A kevésbé fontos szabályokat a discord szerverünkön találod, !dc.");
         }
         return Plugin_Handled; 
     } 

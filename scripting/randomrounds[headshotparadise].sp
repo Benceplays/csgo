@@ -11,7 +11,7 @@ public Plugin myinfo =
 	author = "Booby",
 	description = "This script is needed for the random round.",
 	version = "1.0.0",
-	url = "https://www.wildem.hu/"
+	url = "https://headshotparadise.hu/"
 };
 
 public int random;
