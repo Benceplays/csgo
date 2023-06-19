@@ -7,7 +7,7 @@
 	{
 	    name = "Info",
 	    author = "Booby",
-	    description = "Information that can be written with a timer.",
+	    description = "Idozitovel kiiratott dolgok.",
 	    version = "1.0",
 	    url = "https://headshotparadise.hu/"
 	};
@@ -18,7 +18,7 @@
         RegConsoleCmd("sm_dc", Discord);
         RegConsoleCmd("sm_rules", Rules);
         RegConsoleCmd("sm_stat", Stats);
-        RegConsoleCmd("sm_mg", MiniGames);
+        RegConsoleCmd("sm_new", NewUpdates);
     } 
 
     public Action Discord(int client, int args) 
@@ -30,15 +30,18 @@
         return Plugin_Handled; 
     } 
 
-    public Action MiniGames(int client, int args) 
+    public Action NewUpdates(int client, int args)
     {
         if (IsClientInGame(client))
         {
-            PrintToChat(client, " \x07[Headshot Paradise] \x01 >> A játékmódok:");
+            PrintToChat(client, " \x07[Headshot Paradise] \x01 >> Frissítések: ");
+            PrintToChat(client, " \x07[Headshot Paradise] \x01 >> Legutóbb frissítve: 2023.06.19.");
+            PrintToChat(client, " \x07[Headshot Paradise] \x01 >> Saját pluginok, bug fix, új parancsok.");
+            PrintToChat(client, " \x07[Headshot Paradise] \x01 >> Fegyver kinézetek, 3 új awp skin.");
+            PrintToChat(client, " \x07[Headshot Paradise] \x01 >> Új tagság, egyedi agentel.");
         }
-        return Plugin_Handled; 
-    } 
-
+        return Plugin_Handled;
+    }
     public Action Stats(int client, int args) 
     {
         Menu menu = new Menu(Menu_Callback);
@@ -75,11 +78,11 @@
     {
         if (IsClientInGame(client))
         {
-            PrintToChat(client, " \x07[Headshot Paradise] \x01 >> Szabályok: Ne legyél toxic.");
-            PrintToChat(client, " \x07[Headshot Paradise] \x01 >> Szabályok: Ne legyél toxic.");
-            PrintToChat(client, " \x07[Headshot Paradise] \x01 >> Szabályok: Ne legyél toxic.");
-            PrintToChat(client, " \x07[Headshot Paradise] \x01 >> Szabályok: Ne legyél toxic.");
-            PrintToChat(client, " \x07[Headshot Paradise] \x01 >> A kevésbé fontos szabályokat a discord szerverünkön találod, !dc.");
+            PrintToChat(client, " \x07[Headshot Paradise] \x01 >> Szabályok: Tilos spamelni.");
+            PrintToChat(client, " \x07[Headshot Paradise] \x01 >> Szabályok: Tilos a szerver szidalmazása.");
+            PrintToChat(client, " \x07[Headshot Paradise] \x01 >> Szabályok: Tilos ordítozni, hangtorzítót használni.");
+            PrintToChat(client, " \x07[Headshot Paradise] \x01 >> Szabályok: A voicechat nem életkorhoz, hanem értelmiségi szinthez van kötve.");
+            PrintToChat(client, " \x07[Headshot Paradise] \x01 >> További szabályok a discord szerverünkön, !dc.");
         }
         return Plugin_Handled; 
     } 

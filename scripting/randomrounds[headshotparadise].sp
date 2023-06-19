@@ -18,6 +18,7 @@ public int random;
 //public bool first = true;
 
 public OnPluginStart(int client){
+	HookEvent("player_footstep", DontMove);
 	HookEvent("round_end", OnRoundEnd, EventHookMode_PostNoCopy);
 	//if (first == false) {
 	HookEvent("round_start", OnRoundStart, EventHookMode_PostNoCopy);
@@ -27,6 +28,11 @@ public OnPluginStart(int client){
 	first = false;
 	//round ugras jon majd ide
 	} */
+}
+//Round2 nem lehet mozogni, aki megmozdul az meghal
+public void DontMove(int userid, Event event, const char[] name, bool dontBroadcasts)
+{
+	 ForcePlayerSuicide(userid);
 }
 
 public OnRoundEnd(Handle:event, const String:name[], bool:dontBroadcast){

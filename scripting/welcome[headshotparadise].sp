@@ -20,6 +20,16 @@ public Plugin myinfo =
 public void OnPluginStart()
 {
 	HookEvent("player_spawn", Event_OnPlayerSpawn);
+	HookEvent("nextlevel_changed", StartPluginok);
+	PrintToServer("Lefut-------------------------------------------------------------------");
+}
+public void StartPluginok(Event event, const char[] name, bool dontBroadcast)
+{
+	ServerCommand("bot_kick");
+	ServerCommand("bot_add_ct");
+	ServerCommand("sv_enablebunnyhopping 1");
+	ServerCommand("sv_autobunnyhopping 1");
+	ServerCommand("sv_maxspeed 1000");
 }
 
 public void OnMapStart()
