@@ -15,19 +15,18 @@ public Plugin myinfo =
 };
 
 public int random;
-//public bool first = true;
 
 public OnPluginStart(int client){
-	HookEvent("player_footstep", DontMove);
 	HookEvent("round_end", OnRoundEnd, EventHookMode_PostNoCopy);
-	//if (first == false) {
 	HookEvent("round_start", OnRoundStart, EventHookMode_PostNoCopy);
 	HookEvent("round_start", TheMethod, EventHookMode_PostNoCopy);
-	/*} 
-	else{
-	first = false;
-	//round ugras jon majd ide
-	} */
+}
+//Round1 negev + +hp
+public void Buldozer(Event event, const char[] name, bool dontBroadcast)
+{
+	int client = GetClientOfUserId(event.GetInt("userid"));
+	SetEntityHealth(client, 2000);
+	ServerCommand("give weapon_negev");
 }
 //Round2 nem lehet mozogni, aki megmozdul az meghal
 public void DontMove(int userid, Event event, const char[] name, bool dontBroadcasts)
