@@ -67,6 +67,7 @@ public Action Timer_DelaySpawn(Handle timer, any data)
 	PrintToChat(client, " \x07[Headshot Paradise] \x01 >> %s üdvözlünk a Headshot Paradise-on.", name);
 	PrintToChat(client, " \x07[Headshot Paradise] \x01 >> Reméljük örömteli perceket okozhatunk neked.");
 	PrintToChat(client, " \x07[Headshot Paradise] \x01 >> Weboldal: https://headshotparadise.hu/");
+	PrintToChat(client, " \x07[Headshot Paradise] \x01 >> Szerver ip: 37.17.172.74:27015");
 	PrintToChat(client, " \x07[Headshot Paradise] \x01 >> Discord: https://discord.gg/sg6NFnEUAa");
 	PrintToChat(client, " \x07---------------------------------------------------------------------------");
 	g_bMessagesShown[client] = true;
